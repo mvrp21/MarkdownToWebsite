@@ -1,0 +1,11 @@
+{
+    "source_directory": "site/markdown",
+    "target_directory": "site/html",
+    "globals": {
+        "author": "mvrp21",
+        "contact": {
+            "email": "i should actually get one of those",
+            "linkedin": "one of these too"
+        }
+    }
+}

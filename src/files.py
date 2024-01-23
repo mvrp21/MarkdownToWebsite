@@ -4,15 +4,15 @@ import shutil
 from .markdown import compile_markdown_file
 
 
-def compile_website(source_dir, output_dir, options={}):
-    handle_directory(source_dir, output_dir, options)
+def compile_website(source_dir, output_dir, options, globals):
+    handle_directory(source_dir, output_dir, options, globals)
     print('===> Website compilation complete!')
     # TODO: post-processing routines (link & permission checking mostly)
     # bonus points for disallowing any "unsafe" permissions and stuff like that
     # Most likely the solution to simlinks is also done here
 
 
-def handle_directory(source_dir, output_dir, options={}):
+def handle_directory(source_dir, output_dir, options, globals):
     print(f'> Handling directory "{source_dir}"...')
     if os.path.exists(output_dir) and not os.path.isdir(output_dir):
         print(f'[ERR] "{output_dir}" already exists on target but it is not a directory!')
@@ -23,14 +23,14 @@ def handle_directory(source_dir, output_dir, options={}):
         output_path = os.path.join(output_dir, filename)
         # Handle each type of file differently
         if os.path.isfile(source_path):
-            handle_file(source_path, output_dir, options)
+            handle_file(source_path, output_dir, options, globals)
         elif os.path.isdir(source_path):
-            handle_directory(source_path, output_path, options)
+            handle_directory(source_path, output_path, options, globals)
         else:
             raise 'Like a simlink or something?'
 
 
-def handle_file(source_file, output_dir, options={}):
+def handle_file(source_file, output_dir, options, globals):
     print(f'>> Handling file "{source_file}"...')
     file_path, file_extension = os.path.splitext(source_file)
     file_name = os.path.basename(file_path)
@@ -39,9 +39,9 @@ def handle_file(source_file, output_dir, options={}):
         target_file = os.path.join(output_dir, file_name + '.html')
         # TODO: do not skip compilation if something (like the template) changed
         # (but honestly compilation should be fast, so maybe this doesn't even matter)
-        if not os.path.isfile(target_file):
+        if options.regenerate or not os.path.isfile(target_file):
             print(f'>>> Compiling "{source_file}"...')
-            compile_markdown_file(source_file, target_file, options)
+            compile_markdown_file(source_file, target_file, globals)
         else:
             print(f'>>> Skipping "{source_file}"... (already compiled)')
     # Non-markdown files will be copied to the target directory

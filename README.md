@@ -56,7 +56,7 @@ python compiler.py
 ```
 
 6. **Generated Website**:
-By default the compiled HTML files will be generated in the `output` directory. Open `output/index.html` in a web browser to view your website.
+By default the compiled HTML files will be generated in the `output` directory. Open `output/index.html` (or equivalent) in a web browser to view your website.
 
 ## Project Structure
 
@@ -68,14 +68,14 @@ By default the compiled HTML files will be generated in the `output` directory. 
 
 ## Customization
 
-- **Configuration**: There a few options to play around with. They are all documented in the `config.example.yaml` file.
+- **Configuration**: There a few options to play around with. They are all documented in the `config.json` file (json does not have comments, I'll redo it later).
 - **Styling**: Modify the CSS files in the `static/css` directory to customize the appearance of your website.
 - **Templating**: Adjust the HTML templates in the `templates` directory to customize the structure of your pages.
 
 ## Dependencies
 
-- [Markdown2](https://github.com/trentm/python-markdown2): The actual markdown compiler.
 - [Jinja2](https://jinja.palletsprojects.com/): Used for HTML templating.
+- [Markdown2](https://github.com/trentm/python-markdown2): The actual markdown compiler.
 - [Pygments](https://pygments.org/): Provides syntax highlighting for code snippets.
 
 ## License
@@ -84,6 +84,8 @@ This project is licensed under the GPL-v3.0 License - see the [LICENSE](LICENSE)
 
 ## Acknowledgments
 
+- Actual compilation done by [Markdown2](https://github.com/trentm/python-markdown2).
+- Templating possible thanks to [Jinja2](https://jinja.palletsprojects.com/).
 - Syntax highlighting powered by [Pygments](https://pygments.org/).
 
 This is a personal project. But feel free to contribute, report issues, or suggest improvements!
