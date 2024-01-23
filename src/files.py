@@ -14,7 +14,10 @@ def compile_website(source_dir, output_dir, options={}):
 
 def handle_directory(source_dir, output_dir, options={}):
     print(f'> Handling directory "{source_dir}"...')
-    # TODO: create directories that do not exist on target
+    if os.path.exists(output_dir) and not os.path.isdir(output_dir):
+        print(f'[ERR] "{output_dir}" already exists on target but it is not a directory!')
+        exit(-1)
+    os.makedirs(output_dir, exist_ok=True)
     for filename in os.listdir(source_dir):
         source_path = os.path.join(source_dir, filename)
         output_path = os.path.join(output_dir, filename)
