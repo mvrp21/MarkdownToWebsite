@@ -16,13 +16,13 @@ Looked like a fun little project.
 
 - **Markdown to HTML Conversion**: Convert your Markdown files to HTML, making them ready for deployment as a static website.
 
-- **Customizable Styling**: Easily customize the styling of your website by modifying the CSS files included in the project. See the [CSS directory](#TODO) for more details.
+- **Customizable Styling**: Easily customize the styling of your website by modifying the CSS files included in the project. See the [static directory](#TODO) for more details.
 
 - **Navigation Menu**: Automatically generates a navigation menu based on the structure of your Markdown files.
 
 - **Link Support**: Automatically verifies that all links are working. Same with external links to detect dead ones and warn you.
 
-- **Environment Variables**: Allows you to use environment variables in your text.
+- **Global Variables**: Allows you to use pre defined variables in your text.
 
 - **Extended Markdown**: Adds some elements not present in the "normal" Markdown specifications.
 
@@ -74,6 +74,7 @@ By default the compiled HTML files will be generated in the `output` directory. 
 
 ## Dependencies
 
+- [Markdown2](https://github.com/trentm/python-markdown2): The actual markdown compiler.
 - [Jinja2](https://jinja.palletsprojects.com/): Used for HTML templating.
 - [Pygments](https://pygments.org/): Provides syntax highlighting for code snippets.
 
