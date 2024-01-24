@@ -8,14 +8,14 @@ Ideally each one will be a commit.
 
 ## Could do it now
 - [x] Config file
-- [ ] Make <head> more SEO friendly
-- [ ] Auto navigation generation
+- [x] Auto navigation generation
 - [ ] "Page" variable for jinja (btw variables inside the markdown are not replaced yet)
-- [ ] Better check for skipping compilation (+ pass the regen option)
+- [ ] Better check for skipping compilation
+- [ ] Make <head> more SEO friendly
 
 ## Meh I'm lazy
 - [ ] Base CSS
-- [ ] Link checking
+- [ ] Link checking (pages that do not exist, mayyyybe check links for other websites as well, at least try to see if it's dead)
 
 ## I feel lazier with these
 - [ ] Classes for links (& codeblocks)
