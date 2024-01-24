@@ -9,9 +9,9 @@ Ideally each one will be a commit.
 ## Could do it now
 - [x] Config file
 - [x] Auto navigation generation
+- [x] Make <head> more SEO friendly
 - [ ] "Page" variable for jinja (btw variables inside the markdown are not replaced yet)
 - [ ] Better check for skipping compilation
-- [ ] Make <head> more SEO friendly
 
 ## Meh I'm lazy
 - [ ] Base CSS

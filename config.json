@@ -6,6 +6,13 @@
         "contact": {
             "email": "i should actually get one of those",
             "linkedin": "one of these too"
+        },
+        "website": {
+            "url": "https://idonthaveadomain.yet",
+            "title": "KeepItShort",
+            "description": "Write something better than this, of course.",
+            "default_keywords": "pick, some, that, are, descriptive",
+            "image": "/static/mostlikelyhere.jpg"
         }
     }
 }

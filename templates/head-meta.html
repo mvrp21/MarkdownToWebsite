@@ -1,33 +1,32 @@
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ globals.website.description }}">
 <!--
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Your website description goes here">
-  <meta name="keywords" content="your, keywords, go, here">
-  <meta name="author" content="Your Name">
+  I am 90% sure all of this should be extracted from metadata dynamically
+  from each page, which would be annoying.
 -->
+<meta name="keywords" content="{{ globals.default_keywords }}">
+<meta name="author" content="{{ globals.author }}">
 
-<!-- Open Graph / Facebook
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://www.yourwebsite.com/">
-  <meta property="og:title" content="Your Website Title">
-  <meta property="og:description" content="Your website description goes here">
-  <meta property="og:image" content="http://www.yourwebsite.com/images/og-image.jpg">
--->
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ globals.website.url }}">
+<meta property="og:title" content="{{ globals.website.title }}">
+<meta property="og:description" content="{{ globals.website.description }}">
+<meta property="og:image" content="{{ globals.website.image }}">
 
-<!-- Twitter
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="http://www.yourwebsite.com/">
-  <meta property="twitter:title" content="Your Website Title">
-  <meta property="twitter:description" content="Your website description goes here">
-  <meta property="twitter:image" content="http://www.yourwebsite.com/images/twitter-image.jpg">
--->
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ globals.website.url }}">
+<meta property="twitter:title" content="{{ globals.website.title }}">
+<meta property="twitter:description" content="{{ globals.website.description }}">
+<meta property="twitter:image" content="{{ globals.website.image }}">
 
-<!-- Favicon
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
--->
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-<!-- Global CSS
+<!-- TODO: Global CSS & Custom CSS and stuff
   <link rel="stylesheet" href="styles.css">
 -->
 

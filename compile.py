@@ -19,4 +19,4 @@ if path.exists(options.target_directory) and path.isdir(options.target_directory
         print(f'[ERR] Directory "{options.target_directory}" not empty!')
         exit(-1)
 
-compile_website(options.source_directory, options.target_directory, options, globals)
+compile_website(options.source_directory, options.target_directory, options, config['globals'])

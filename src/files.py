@@ -12,19 +12,25 @@ def generate_nav_data(source_dir, output_dir, options):
     for file_name in os.listdir(source_dir):
         file_path = os.path.join(source_dir, file_name)
         # First: the file is in the root directory
-        if os.path.isfile(file_path) and file_name.endswith('.md'):
+        if os.path.isfile(file_path) and (file_name.endswith('.md') or file_name.endswith('.html')):
             filename_noext, file_extension = os.path.splitext(file_name)
             nav_data[filename_noext] = os.path.join('/', filename_noext + '.html')
         # Second: the file is called "index" or has the same name of its directory
         elif os.path.isdir(file_path):
-            index_file = os.path.join(file_path, 'index.md')
-            named_file = os.path.join(file_path, file_name + '.md')
-            # filename_noext, file_extension = os.path.splitext(file_name)
-            # "index" type files take precedence (not gonna add both common)
-            if os.path.exists(index_file) and os.path.isfile(index_file):
-                nav_data[file_name] = os.path.join('/', file_name, 'index.html')
-            elif os.path.exists(index_file) and os.path.isfile(named_file):
-                nav_data[file_name] = os.path.join('/', file_name, file_name + '.html')
+            # Allow to use html directly instead of markdown sometimes
+            # TODO: see if we allow to write only the main tag or the whole document
+            # -> bonus points: make this configurable (even better: implicit!)
+            for file_extension in ['.md', '.html']:
+                index_file = os.path.join(file_path, 'index' + file_extension)
+                named_file = os.path.join(file_path, file_name + file_extension)
+                # filename_noext, file_extension = os.path.splitext(file_name)
+                # "index" type files take precedence (not gonna add both common)
+                if os.path.exists(index_file) and os.path.isfile(index_file):
+                    nav_data[file_name] = os.path.join('/', file_name, 'index.html')
+                    break
+                elif os.path.exists(index_file) and os.path.isfile(named_file):
+                    nav_data[file_name] = os.path.join('/', file_name, file_name + '.html')
+                    break
     return nav_data
 
 

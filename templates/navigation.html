@@ -1,7 +1,9 @@
 <nav>
   <ul>
-  {%- for key in nav_data %}
-    <li><a class="outside_link" href="{{ nav_data[key] }}">{{ key }}</a></li>
-  {% endfor %}
+  {%- for key in nav_data -%}
+    <li>
+      <a class="page-link" href="{{ nav_data[key] }}">{{ key }}</a>
+    </li>
+  {%- endfor %}
   </ul>
 </nav>
