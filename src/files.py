@@ -78,7 +78,7 @@ def handle_file(source_file, output_dir, nav_data, options, globals):
             print(f'>>> Skipping "{source_file}"... (already compiled)')
     # Non-markdown files will be copied to the target directory
     else:
-        target_file = os.path.join(output_dir, file_name)
+        target_file = os.path.join(output_dir, file_name + file_extension)
         if not os.path.isfile(target_file) or not filecmp.cmp(source_file, target_file):
             print(f'>>> Copying "{source_file}" to "{target_file}"...')
             shutil.copyfile(source_file, target_file)
